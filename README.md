@@ -16,24 +16,20 @@
 
     ```
     pip install pandas
-
     ```
 - MySQL connector:
 
     ```
     pip install mysql-connector-python
-
     ```
 - dotenv
 
     ```
     pip install dotenv
-
     ```
 
 - (opcional) tabulate
 
     ```
     pip install tabulate
-    
     ```
