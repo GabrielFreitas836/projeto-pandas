@@ -27,7 +27,11 @@
     ```
     pip install dotenv
     ```
+- openpyxl (permite ler arquivos excel)
 
+    ```
+    pip install openpyxl
+    ```
 - (opcional) tabulate
 
     ```
