@@ -7,6 +7,7 @@
 
 import pandas as pd
 import time
+from tabulate import tabulate
 
 class Entrada:
     def menu(self):
@@ -51,7 +52,7 @@ class Entrada:
                 print("=" *50)
                 print("Exibindo arquivo encontrado...")
                 time.sleep(0.5)
-                print(frame.head())
+                print(tabulate(frame.head(), headers = "keys", tablefmt = "fancy_grid"))
                 return True
             else:
                 print("Arquivo vazio! Escolha outro arquivo...")
