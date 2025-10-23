@@ -34,6 +34,10 @@ class Entrada:
                     print("Saindo do programa...")
                     time.sleep(0.8)
                     break
+                case _:
+                    print("Opção inválida! Tente novamente...")
+                    time.sleep(1)
+                    continue
     
     def ler_excel(self):
         try:
