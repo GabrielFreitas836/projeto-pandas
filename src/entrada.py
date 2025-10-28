@@ -8,6 +8,12 @@
 import pandas as pd
 import time
 from tabulate import tabulate
+import mysql.connector
+from dotenv import load_dotenv
+import os
+
+
+load_dotenv()
 
 class Entrada:
     def menu(self):
@@ -30,7 +36,30 @@ class Entrada:
                     else:
                         continue
                 case 2:
-                    self.ler_mysql()
+                    conn = self.ler_mysql()
+
+                    if conn is not None:
+                        cursor = conn.cursor()
+                        cursor.execute("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_SCHEMA = %s", (conn.database, ))
+                        tables = cursor.fetchall()
+
+                        print(tabulate(tables, headers = 'keys', tablefmt = "fancy_grid"))
+                        time.sleep(0.3)
+                        print("\n")
+                        table_name = input(f"Escolha uma das tabelas de {conn.database}: ")
+                        selected_table = ""
+                        for table in tables:
+                            if table_name == table:
+                                selected_table = table
+                                break
+                        
+                        if selected_table == "":
+                            print("Tabela não encontrada!")
+                        else:
+                            table_df = pd.DataFrame(selected_table)
+                            print(tabulate(table_df, headers = 'keys', tablefmt = "fancy_grid"))
+                    else:
+                        print("Falha na conexão!")
                 case 3:
                     print("Saindo do programa...")
                     time.sleep(0.8)
@@ -63,5 +92,27 @@ class Entrada:
         except Exception as error:
             print("Erro de execução: ", error)
 
-    def ler_mysql():
-        pass
+    def ler_mysql(self):
+        try:
+            print("=" *50)
+            database_name = input("Digite o nome do banco: ").lower()
+            self.conn = mysql.connector.connect(
+                host = os.getenv('DB_HOST'),
+                user = os.getenv('DB_USER'),
+                password = os.getenv('DB_PASSWORD'),
+                database = database_name
+            )
+            if self.conn.is_connected():
+                print(f"Conexão com banco {self.conn.database} realizada com sucesso!")
+                return self.conn
+            else:
+                print("Não foi possível realizar a conexão!")
+                return None
+        except mysql.connector.DatabaseError as error:
+            print("Erro de banco: ", error)
+        except mysql.connector.InterfaceError as error:
+            print("Erro de interface do banco: ", error)
+        except mysql.connector.InternalError as error:
+            print("Erro interno de banco: ", error)
+        except Exception as error:
+            print("Erro de execução: ", error)
