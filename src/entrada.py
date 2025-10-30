@@ -40,26 +40,37 @@ class Entrada:
 
                     if conn is not None:
                         cursor = conn.cursor()
-                        cursor.execute("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_SCHEMA = %s", (conn.database, ))
-                        tables = cursor.fetchall()
+                        cursor.execute("""
+                            SELECT TABLE_NAME 
+                            FROM INFORMATION_SCHEMA.TABLES 
+                            WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_SCHEMA = %s
+                        """, (conn.database,))
+                        tables = [t[0] for t in cursor.fetchall()]
 
-                        print(tabulate(tables, headers = 'keys', tablefmt = "fancy_grid"))
+                        print(tabulate([[t] for t in tables], headers = ["Tabelas"], tablefmt = "fancy_grid"))
                         time.sleep(0.3)
                         print("\n")
+
                         table_name = input(f"Escolha uma das tabelas de {conn.database}: ")
-                        selected_table = ""
-                        for table in tables:
-                            if table_name == table:
-                                selected_table = table
+                        time.sleep(0.8)
+                        print("Exibindo arquivo...")
+
+                        if table_name in tables:
+                            query = f"SELECT * FROM `{table_name}`"
+                            df_table = pd.read_sql(query, conn)
+
+                            if df_table.empty:
+                                time.sleep(0.3)
+                                print("Tabela vazia")
                                 break
-                        
-                        if selected_table == "":
-                            print("Tabela não encontrada!")
+                            else:
+                                print(tabulate(df_table.head(), headers = 'keys', tablefmt = "fancy_grid"))
+                                break
                         else:
-                            table_df = pd.DataFrame(selected_table)
-                            print(tabulate(table_df, headers = 'keys', tablefmt = "fancy_grid"))
-                    else:
-                        print("Falha na conexão!")
+                            print("Tabela não encontrada!")
+
+                        cursor.close()
+                        conn.close()
                 case 3:
                     print("Saindo do programa...")
                     time.sleep(0.8)
@@ -103,7 +114,7 @@ class Entrada:
                 database = database_name
             )
             if self.conn.is_connected():
-                print(f"Conexão com banco {self.conn.database} realizada com sucesso!")
+                print(f"Conexão com banco {self.conn.database} realizada com sucesso!\n")
                 return self.conn
             else:
                 print("Não foi possível realizar a conexão!")
