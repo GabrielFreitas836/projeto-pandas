@@ -6,6 +6,7 @@
 - [Estrutura do projeto](#-estrutura-do-projeto)
 - [Funcionalidades](#funcionalidades)
 - [Instalação](#%EF%B8%8F-instalação)
+- [Variáveis de ambiente](#variáveis-de-ambiente)
 
 ##  ▶ Como acessar o repositório
 
@@ -168,5 +169,16 @@ Siga os passos abaixo para configurar o ambiente e executar o projeto localmente
     ```
     python main.py
     ```
+
+    
+## Variáveis de Ambiente
+
+Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente no seu .env para realizar a conexão com o banco de dados
+
+`DB_HOST`
+
+`DB_USER`
+
+`DB_PASSWORD`
 
 
