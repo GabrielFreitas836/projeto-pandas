@@ -7,6 +7,7 @@
 - [Funcionalidades](#funcionalidades)
 - [Instalação](#%EF%B8%8F-instalação)
 - [Variáveis de ambiente](#variáveis-de-ambiente)
+- [Documentação](#-documentação)
 
 ##  ▶ Como acessar o repositório
 
@@ -181,4 +182,14 @@ Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de
 
 `DB_PASSWORD`
 
+## 📄 Documentação
 
+Segue abaixo os links da documentação oficial de algumas das ferramentas utilizadas nesse projeto:
+
+- [Python](https://docs.python.org/3/)
+
+- [MySQL Connector](https://dev.mysql.com/doc/connector-python/en/)
+
+- [Pandas](https://pandas.pydata.org/docs/)
+
+- [Openpyxl](https://openpyxl.readthedocs.io/en/stable/)
