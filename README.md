@@ -1,4 +1,3 @@
-
 # Projeto Pandas
 
 ##  ▶ Como acessar o repositório
@@ -38,21 +37,39 @@
     pip install tabulate
     ```
 
-## Instalação
+## 🗂 Estrutura do projeto
+
+```bash
+projeto-pandas/
+├── .venv/
+├── src/
+│   ├── entrada.py
+│   └── main.py
+├── .env
+├── .gitignore
+└── README.md  
+```
+##  ⬇️ Instalação
 
 Siga os passos abaixo para configurar o ambiente e executar o projeto localmente
 
 1. Clone o repositório
 
+    ```
     git clone https://github.com/GabrielFreitas836/projeto-pandas.git
+    ```
 
-2. Acesse o diretório do projeto
-
+1. Acesse o diretório do projeto
+   
+    ```
     cd projeto-pandas
+    ```
 
 3. (Opcional) Crie e ative um ambiente virtual
 
+    ```
     python -m venv .venv
+    ```
 
     . No Windows
 
@@ -63,13 +80,17 @@ Siga os passos abaixo para configurar o ambiente e executar o projeto localmente
 
     . No Linux/Mac
 
-        source .venv/bin/activate
+   ```
+   source .venv/bin/activate
+   ```
 
-4. Instale as dependências necessárias
+5. Instale as dependências necessárias
 
-    [Dependências necessárias](#Dependências-necessárias)
+    [Dependências necessárias](#dependências-necessárias)
     
-5. Execute o projeto
+6. Execute o projeto
     ```
     python main.py
     ```
+
+
