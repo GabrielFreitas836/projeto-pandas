@@ -1,5 +1,12 @@
 # Projeto Pandas
 
+## 📚 Sumário
+- [Como acessar o repositório](#-como-acessar-o-repositório)
+- [Dependências necessárias](#-dependências-necessárias)
+- [Estrutura do projeto](#-estrutura-do-projeto)
+- [Funcionalidades](#funcionalidades)
+- [Instalação](#-instalação)
+
 ##  ▶ Como acessar o repositório
 
 - Acesse o repositório por este link:
@@ -49,6 +56,75 @@ projeto-pandas/
 ├── .gitignore
 └── README.md  
 ```
+
+## Funcionalidades
+
+O projeto foi desenvolvido para oferecer uma interface interativa em terminal que permite ao usuário ler, validar e visualizar dados provenientes de diferentes fontes (Excel e MySQL), utilizando a biblioteca Pandas como base para manipulação de dados.
+
+🔹 **Menu principal**
+
+- Exibe uma interface simples e clara no terminal.
+
+- Oferece três opções principais:
+
+    - Ler arquivo Excel
+
+    - Ler arquivo de banco MySQL
+
+    - Sair do programa
+
+📘 **Leitura de arquivos Excel**
+
+- Solicita ao usuário o caminho completo do arquivo .xlsx a ser lido.
+
+- Realiza a leitura com pandas.read_excel().
+
+- Verifica se o arquivo não está vazio antes de exibir.
+
+- Mostra as primeiras linhas da planilha em formato de tabela estilizada com tabulate.
+
+- Exibe mensagens de erro claras em caso de:
+
+    - Caminho inválido
+
+    - Arquivo vazio
+
+    - Formato incorreto
+
+🗄️ **Leitura de dados MySQL**
+
+- Carrega automaticamente as variáveis de ambiente do arquivo .env (host, usuário e senha).
+
+- Permite ao usuário informar o nome do banco de dados desejado.
+
+- Exibe todas as tabelas disponíveis no banco, formatadas em tabela visual (tabulate).
+
+- Permite selecionar uma tabela e visualizar as primeiras linhas via pandas.read_sql().
+
+- Implementa tratamento de exceções específicas do mysql.connector para:
+
+    - Erros de conexão
+
+    - Erros de interface
+
+    - Erros internos ou de execução
+
+- Fecha automaticamente a conexão após o uso.
+
+⏱️ Interações e usabilidade
+
+- Utiliza delays com time.sleep() para tornar a interação mais fluida e natural.
+
+- Mensagens são apresentadas com formatação e espaçamento para melhorar a leitura.
+
+- Inclui tratamento de exceções gerais para evitar que o programa seja encerrado abruptamente.
+
+🧰 Estrutura modular
+
+- entrada.py: Contém a classe Entrada, responsável por todo o fluxo de entrada, leitura e validação.
+
+- main.py: Ponto de partida do sistema, que instancia e executa o menu principal.
+
 ##  ⬇️ Instalação
 
 Siga os passos abaixo para configurar o ambiente e executar o projeto localmente
