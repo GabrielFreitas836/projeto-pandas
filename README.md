@@ -86,7 +86,7 @@ Siga os passos abaixo para configurar o ambiente e executar o projeto localmente
 
 5. Instale as dependências necessárias
 
-    [Dependências necessárias](#depêndencias-necessárias)
+    [Dependências necessárias](#-depêndencias-necessárias)
     
 6. Execute o projeto
     ```
