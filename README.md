@@ -5,7 +5,7 @@
 - [Dependências necessárias](#-dependências-necessárias)
 - [Estrutura do projeto](#-estrutura-do-projeto)
 - [Funcionalidades](#funcionalidades)
-- [Instalação](#-instalação)
+- [Instalação](#%EF%B8%8F-instalação)
 
 ##  ▶ Como acessar o repositório
 
@@ -13,7 +13,7 @@
 
     https://github.com/GabrielFreitas836/projeto-pandas.git
 
-##  🧰 Depêndencias necessárias
+##  🧰 Dependências necessárias
 - Visual Studio Code: 
     https://code.visualstudio.com/download
 - Python:
@@ -162,7 +162,7 @@ Siga os passos abaixo para configurar o ambiente e executar o projeto localmente
 
 5. Instale as dependências necessárias
 
-    [Dependências necessárias](#-depêndencias-necessárias)
+    [Dependências necessárias](#-dependências-necessárias)
     
 6. Execute o projeto
     ```
