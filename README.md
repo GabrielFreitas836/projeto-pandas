@@ -42,26 +42,34 @@
 
 Siga os passos abaixo para configurar o ambiente e executar o projeto localmente
 
-    1. Clone o repositório
+1. Clone o repositório
 
-        git clone https://github.com/GabrielFreitas836/projeto-pandas.git
+    git clone https://github.com/GabrielFreitas836/projeto-pandas.git
 
-    2. Acesse o diretório do projeto
+2. Acesse o diretório do projeto
 
-        cd projeto-pandas
+    cd projeto-pandas
 
-    3. (Opcional) Crie e ative um ambiente virtual
+3. (Opcional) Crie e ative um ambiente virtual
 
-        python -m venv .venv
+    python -m venv .venv
 
-        # No Windows
-        cd .venv\Scripts\activate
+    . No Windows
 
-        # No Linux/Mac
+    ```
+    cd .venv\Scripts\activate
+    ```
+    
+
+    . No Linux/Mac
+
         source .venv/bin/activate
 
-    4. Instale as dependências necessárias
-        [Dependências necessárias](#Dependências-necessárias)
+4. Instale as dependências necessárias
+
+    [Dependências necessárias](#Dependências-necessárias)
     
-    5. Execute o projeto
-        python main.py
+5. Execute o projeto
+    ```
+    python main.py
+    ```
