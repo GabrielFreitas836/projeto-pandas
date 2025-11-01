@@ -6,7 +6,7 @@
 - [Estrutura do projeto](#-estrutura-do-projeto)
 - [Funcionalidades](#funcionalidades)
 - [Instalação](#%EF%B8%8F-instalação)
-- [Variáveis de ambiente](#variáveis-de-ambiente)
+- [Variáveis de ambiente](#%EF%B8%8F-variáveis-de-ambiente)
 - [Documentação](#-documentação)
 
 ##  ▶ Como acessar o repositório
@@ -59,7 +59,7 @@ projeto-pandas/
 └── README.md  
 ```
 
-## Funcionalidades
+## 💡Funcionalidades
 
 O projeto foi desenvolvido para oferecer uma interface interativa em terminal que permite ao usuário ler, validar e visualizar dados provenientes de diferentes fontes (Excel e MySQL), utilizando a biblioteca Pandas como base para manipulação de dados.
 
@@ -172,7 +172,7 @@ Siga os passos abaixo para configurar o ambiente e executar o projeto localmente
     ```
 
     
-## Variáveis de Ambiente
+## ⚙️ Variáveis de Ambiente
 
 Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente no seu .env para realizar a conexão com o banco de dados
 
